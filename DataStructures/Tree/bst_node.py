@@ -65,8 +65,26 @@ def get_key(my_node):
         key = my_node["key"]
     return key
 
-def insert_node():
-    pass
+def insert_node(root, key, value):
+    if root is None:
+        return new_node(key, value)
+    
+    if key < root['key']:
+        root['left'] = insert_node(root['left'], key, value)
+    
+    elif key > root['key']:
+        root['right'] = insert_node(root['right'], key, value)
+    
+    else:
+        root['value'] = value
+    
+    left_size = root['left']['size'] if root['left'] is not None else 0
+    right_size = root['right']['size'] if root['right'] is not None else 0
+    root['size'] = 1 + left_size + right_size
+    
+    return root
+    
+        
 
 def get_node():
     pass
