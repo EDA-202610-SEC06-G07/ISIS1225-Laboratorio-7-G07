@@ -84,10 +84,18 @@ def insert_node(root, key, value):
     
     return root
     
+def get_node(root, key):
+    if root is None:
+        return None
+    
+    if key < root['key']:
+        return get_node(root['left'], key)
         
-
-def get_node():
-    pass
+    elif key > root['key']:
+        return get_node(root['right'], key)
+        
+    else: 
+        return root['value']      
 
 def size_tree(root):
     
