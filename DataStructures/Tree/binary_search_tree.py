@@ -7,5 +7,5 @@ def put(my_bst, key, value):
 def get():
     pass
 
-def size():
-    pass
+def size(my_bst):
+    return bst.size_tree(my_bst['root'])

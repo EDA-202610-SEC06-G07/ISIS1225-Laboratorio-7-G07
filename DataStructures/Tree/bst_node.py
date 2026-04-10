@@ -89,6 +89,10 @@ def insert_node(root, key, value):
 def get_node():
     pass
 
-def size_tree():
-    pass
+def size_tree(root):
+    
+    if root is None:
+        return 0
+    
+    return root['size']
 
